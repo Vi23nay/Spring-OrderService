@@ -14,13 +14,14 @@ spring:
     show-sql: true
   application:
     name: ORDER-SERVICE #App-name can be used to view service name in eureka server
-  
+  config:
+    import: configserver:http://localhost:9296 #To fetch config from ConfigServer app
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    register-with-eureka: true # connect with eureka server
-    fetch-registry: true
-    service-url:
-      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    register-with-eureka: true # connect with eureka server
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
